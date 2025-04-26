@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>브로우니 반영구 시술 동의서</title>
+  <style>
+    body {
+      background-color: #faf6f2;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+      color: #4d392d;
+    }
+    h1, h2 {
+      color: #5a3c1a;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff8f0;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(90, 60, 26, 0.15);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #d6cfc9;
+      border-radius: 8px;
+      background-color: #fefdfc;
+    }
+    input[type=checkbox], input[type=radio] {
+      width: 20px;
+      height: 20px;
+      accent-color: #5a3c1a;
+      margin-right: 8px;
+    }
+    button {
+      background-color: #5a3c1a;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 30px;
+    }
+    button:hover {
+      background-color: #402c16;
+    }
+    @media (max-width: 600px) {
+      input, textarea, button {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>브로우니 반영구 시술 동의서</h1>
+
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSc-CaYg-Wpi7VEBgWVTn207q3Wa4BnU4L2CYDZk56SDT8Xl3g/viewform" 
+      method="POST" 
+      target="hidden_iframe" 
+      onsubmit="return validateForm();">
+
+  <label>이름 <input name="entry.1111111111" type="text" required></label>
+  <label>성별 <input name="entry.2222222222" type="text" required></label>
+  <label>연락처 <input name="entry.3333333333" type="text" required></label>
+  <label>생년월일 <input name="entry.4444444444" type="text" required></label>
+  <label>주소 <input name="entry.5555555555" type="text"></label>
+
+  <label>방문 경로 <textarea name="entry.6666666666" rows="3"></textarea></label>
+  <label>시술 이력 및 건강 체크 <textarea name="entry.7777777777" rows="3"></textarea></label>
+  <label>시술 부위 및 방법 <textarea name="entry.8888888888" rows="3"></textarea></label>
+
+  <label>개인정보 수집 및 활용 동의 (예/아니오) <input name="entry.9999999999" type="text" required></label>
+  <label>시술 위험성 및 부작용 동의 (예/아니오) <input name="entry.1010101010" type="text" required></label>
+
+  <label>작성일 <input name="entry.1212121212" type="date" required></label>
+  <label>서명 <input name="entry.1313131313" type="text" required></label>
+
+  <input type="hidden" name="entry.1414141414" id="timestamp">
+
+  <div style="margin-top:20px;">
+    <label><input type="checkbox" id="agree_terms"> 시술 약관을 읽고 동의합니다.</label>
+  </div>
+
+  <button type="submit">제출하기</button>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { moveToThankYou(); }"></iframe>
+</form>
+
+<script>
+  var submitted = false;
+
+  function validateForm() {
+    if (!document.getElementById('agree_terms').checked) {
+      alert('시술 약관에 동의하셔야 제출할 수 있습니다.');
+      return false;
+    }
+    document.getElementById('timestamp').value = new Date().toLocaleString();
+    submitted = true;
+    return true;
+  }
+
+  function moveToThankYou() {
+    if (submitted) {
+      alert(\"제출이 완료되었습니다. 감사합니다!\");
+      window.location.href = \"thankyou.html\";
+    }
+  }
+</script>
+
+</body>
+</html>
