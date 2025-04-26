@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>브로우니 - 제출 완료</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+    body {
+      background-color: #f8f5f0;
+      font-family: 'Nanum Myeongjo', serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #4d392d;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #593c1f;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.4em;
+      margin-bottom: 40px;
+      color: #5a4638;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #7a5e42, #c5a77b);
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #593c1f, #a88b5b);
+    }
+
+    .logo {
+      width: 160px;
+      margin-bottom: 20px;
+      animation: fadeInLogo 2s ease;
+    }
+
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 로고 삽입 위치 (브로우니 로고 파일 있으면 src 경로 연결) -->
+  <!-- <img src="browny_logo.png" alt="브로우니 로고" class="logo"> -->
+
+  <h1>감사합니다!</h1>
+  <p>브로우니 반영구 시술 동의서가 성공적으로 제출되었습니다.</p>
+
+  <a href="/" class="button">메인 페이지로 돌아가기</a>
+
+</body>
+</html>
