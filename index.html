@@ -23,6 +23,22 @@
 	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" />
 	<link rel="stylesheet" type="text/css" href="css/unslider.css" />
 	<link rel="stylesheet" type="text/css" href="css/template.css" />
+	<style>
+		/* Alumni 섹션 그리드 정렬 수정:
+		   카드 높이가 달라도 4개(sm 이상)마다 float를 해제해
+		   빈 공간이 생기지 않도록 함 */
+		@media (min-width: 768px) {
+			#nino-Alumni .row > .col-sm-3:nth-child(4n+1) {
+				clear: left;
+			}
+		}
+		/* 사진 비율이 달라도 카드 높이가 통일되도록 원형 사진 크기 고정 */
+		#nino-Alumni .img-circle {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+		}
+	</style>
 	
 </head>
 
